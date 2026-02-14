@@ -1,0 +1,13 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+evm_version = "paris"
+
+[rpc_endpoints]
+pharos-testnet = "https://atlantic.dplabs-internal.com"
+
+[etherscan]
+pharos-testnet = { key = "empty", url = "https://atlantic.pharosscan.xyz/api" }
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
