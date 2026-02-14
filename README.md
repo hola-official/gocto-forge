@@ -17,7 +17,7 @@ ETN Forge is a comprehensive development toolkit designed to accelerate Electron
 
 ## 📋 Prerequisites
 
-Before using etn-forge, ensure you have the following installed:
+Before using gocto-forge, ensure you have the following installed:
 
 - **Node.js** (v18 or higher)
 - **npm** or **yarn** or **pnpm**
@@ -34,7 +34,7 @@ For blockchain development:
 ### Using npx (Recommended)
 
 ```sh
-npx etn-forge <app name>
+npx gocto-forge <app name>
 ```
 
 ### Interactive Setup
@@ -49,7 +49,7 @@ The CLI will guide you through the setup process:
 
 ```bash
 # Create a Next.js + TypeScript + Hardhat project
-npx etn-forge my-nextjs-dapp
+npx gocto-forge my-nextjs-dapp
 
 # The CLI will automatically:
 # ✅ Copy template files
@@ -314,8 +314,8 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ```bash
 # Clone the repository
-git clone https://github.com/DevBigEazi/etn-forge.git
-cd etn-forge
+git clone https://github.com/DevBigEazi/gocto-forge.git
+cd gocto-forge
 
 # Install dependencies
 npm install
@@ -329,13 +329,13 @@ npx etn-dapp test-project
 ## 📞 Support
 
 - **Documentation**: [https://developer.electroneum.com](https://developer.electroneum.com)
-- **GitHub Issues**: [Report bugs here](https://github.com/devbigeazi/etn-forge/issues)
+- **GitHub Issues**: [Report bugs here](https://github.com/devbigeazi/gocto-forge/issues)
 
 ---
 
 **Built with ❤️ for Electroneum Developer Community**
 
-*etn-forge - Empowering developers to build the future of decentralized applications on Electroneum.*
+*gocto-forge - Empowering developers to build the future of decentralized applications on Electroneum.*
 
 ## 🔗 Useful Links
 

@@ -1,6 +1,6 @@
-# etn-forge Technical Documentation 🔧
+# gocto-forge Technical Documentation 🔧
 
-This document provides detailed technical information about the etn-forge project architecture, implementation, and development guidelines.
+This document provides detailed technical information about the gocto-forge project architecture, implementation, and development guidelines.
 
 ## 📋 Table of Contents
 
@@ -18,7 +18,7 @@ This document provides detailed technical information about the etn-forge projec
 ### Project Structure
 
 ```
-etn-forge/
+gocto-forge/
 ├── bin/                    # CLI executable
 │   └── create-app.js      # Main CLI logic
 ├── templates/             # Template directories
@@ -407,7 +407,7 @@ electroneum = { key = "empty", url = "https://blockexplorer.electroneum.com/api"
    ```bash
    # Create test project
    npm link
-   etn-forge test-project
+   gocto-forge test-project
    
    # Test template functionality
    cd test-project
@@ -498,10 +498,10 @@ electroneum = { key = "empty", url = "https://blockexplorer.electroneum.com/api"
 
 ```bash
 # Enable debug logging
-DEBUG=* etn-forge my-project
+DEBUG=* gocto-forge my-project
 
 # Verbose output
-etn-forge my-project --verbose
+gocto-forge my-project --verbose
 ```
 
 ### Frontend Debugging
@@ -566,4 +566,4 @@ jobs:
 
 ---
 
-**This technical documentation provides a comprehensive overview of the etn-forge architecture and implementation details. For specific usage instructions, refer to the main README.md file.** 
+**This technical documentation provides a comprehensive overview of the gocto-forge architecture and implementation details. For specific usage instructions, refer to the main README.md file.** 
