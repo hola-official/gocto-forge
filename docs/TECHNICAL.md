@@ -149,7 +149,7 @@ template-name/
 
 ```json
 {
-  "name": "electroneum-dapp",
+  "name": "Pharos-dapp",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -232,13 +232,28 @@ export function Providers({ children }: { children: React.ReactNode }) {
 ```typescript
 // config.ts
 import { http, createConfig } from 'wagmi';
-import { electroneum, electroneumTestnet } from 'wagmi/chains';
+import { defineChain } from 'viem';
+
+export const pharosTestnet = defineChain({
+  id: 688689,
+  name: 'Pharos Atlantic Testnet',
+  nativeCurrency: { name: 'PHRS', symbol: 'PHRS', decimals: 18 },
+  rpcUrls: {
+    default: {
+      http: ['https://atlantic.dplabs-internal.com'],
+      webSocket: ['wss://atlantic.dplabs-internal.com'],
+    },
+  },
+  blockExplorers: {
+    default: { name: 'PharosScan', url: 'https://atlantic.pharosscan.xyz' },
+  },
+  testnet: true,
+});
 
 export const config = createConfig({
-  chains: [electroneum, electroneumTestnet],
+  chains: [pharosTestnet],
   transports: {
-    [electroneum.id]: http(),
-    [electroneumTestnet.id]: http(),
+    [pharosTestnet.id]: http('https://atlantic.dplabs-internal.com'),
   },
 });
 ```
@@ -254,13 +269,13 @@ export const useGetCounter = () => {
   const queryClient = useQueryClient();
   const chainId = useChainId();
   
-  const network = useMemo(() => 
-    chainId === 52014 ? "mainnet" : "testnet", 
+  const network = useMemo(() =>
+    chainId === 688689 ? "testnet" : "unknown",
     [chainId]
   );
-  
-  const contractAddress = useMemo(() => 
-    CONTRACTS[network], 
+
+  const contractAddress = useMemo(() =>
+    CONTRACTS[network],
     [network]
   );
 
@@ -360,20 +375,31 @@ contract Counter {
 
 ```typescript
 // hardhat.config.ts
-import { HardhatUserConfig } from "hardhat/config";
+import { HardhatUserConfig, vars } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 
 const config: HardhatUserConfig = {
   solidity: "0.8.26",
   networks: {
-    "electroneum-testnet": {
-      url: `https://rpc.ankr.com/electroneum_testnet/${process.env.ANKR_API_KEY}`,
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+    'pharos-testnet': {
+      url: 'https://atlantic.dplabs-internal.com',
+      accounts: vars.has("PRIVATE_KEY") ? [vars.get("PRIVATE_KEY")] : [],
     },
-    "electroneum": {
-      url: `https://rpc.ankr.com/electroneum/${process.env.ANKR_API_KEY}`,
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+  },
+  etherscan: {
+    apiKey: {
+      'pharos-testnet': "empty",
     },
+    customChains: [
+      {
+        network: "pharos-testnet",
+        chainId: 688689,
+        urls: {
+          apiURL: "https://atlantic.pharosscan.xyz/api",
+          browserURL: "https://atlantic.pharosscan.xyz",
+        },
+      },
+    ],
   },
 };
 
@@ -391,12 +417,10 @@ libs = ["lib"]
 evm_version = "paris"
 
 [rpc_endpoints]
-electroneum-testnet = "https://rpc.ankr.com/electroneum_testnet/${ANKR_API_KEY}"
-electroneum = "https://rpc.ankr.com/electroneum/${ANKR_API_KEY}"
- 
+pharos-testnet = "https://atlantic.dplabs-internal.com"
+
 [etherscan]
-electroneum-testnet = { key = "empty", url = "https://testnet-blockexplorer.electroneum.com/api"}
-electroneum = { key = "empty", url = "https://blockexplorer.electroneum.com/api" }
+pharos-testnet = { key = "empty", url = "https://atlantic.pharosscan.xyz/api" }
 ```
 
 ## 🔄 Development Workflow
@@ -509,10 +533,9 @@ gocto-forge my-project --verbose
 ```typescript
 // Enable Wagmi debug mode
 const config = createConfig({
-  chains: [electroneum, electroneumTestnet],
+  chains: [pharosTestnet],
   transports: {
-    [electroneum.id]: http(),
-    [electroneumTestnet.id]: http(),
+    [pharosTestnet.id]: http('https://atlantic.dplabs-internal.com'),
   },
   debug: true, // Enable debug mode
 });

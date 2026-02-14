@@ -1,8 +1,8 @@
-# ETN Forge 🚀
+# gOcto Forge 🚀
 
-**The Ultimate Electroneum DApp Scaffolding Tool**
+**The Ultimate Pharos DApp Scaffolding Tool**
 
-ETN Forge is a comprehensive development toolkit designed to accelerate Electroneum DApp development. It provides pre-configured templates with modern web technologies and blockchain development tools, making it easy to build, test, and deploy decentralized applications on the Electroneum Smart Chain.
+gOcto Forge is a comprehensive development toolkit designed to accelerate Pharos DApp development. It provides pre-configured templates with modern web technologies and blockchain development tools, making it easy to build, test, and deploy decentralized applications on the Pharos Smart Chain.
 
 ## 🌟 Features
 
@@ -11,7 +11,7 @@ ETN Forge is a comprehensive development toolkit designed to accelerate Electron
 - **Blockchain Development Tools**: Integrated Hardhat and Foundry support
 - **Modern Web Stack**: Latest versions of React, Next.js, Tailwind CSS, and more
 - **Wallet Integration**: Built-in Wagmi and Viem for seamless wallet connectivity
-- **Electroneum Optimized**: Pre-configured for Electroneum Smart Chain (mainnet & testnet)
+- **Pharos Optimized**: Pre-configured for Pharos Atlantic Testnet
 - **Interactive CLI**: Beautiful command-line interface with arrow key navigation
 - **Production Ready**: Includes testing, linting, and deployment configurations
 
@@ -117,7 +117,7 @@ my-dapp/
 - **Development Environment**: Hardhat or Foundry
 - **Sample Contract**: Counter contract with full CRUD operations
 - **Testing Framework**: Comprehensive test suite
-- **Deployment Scripts**: Automated deployment to Electroneum networks
+- **Deployment Scripts**: Automated deployment to Pharos networks
 - **Type Generation**: Automatic TypeScript types from contracts
 - **Gas Optimization**: Built-in gas reporting and optimization
 
@@ -181,23 +181,26 @@ anvil
 forge script script/Counter.s.sol:CounterScript --rpc-url <rpc_url> --private-key <private_key>
 ```
 
-## 🌐 Electroneum Network Configuration
+## 🌐 Pharos Network Configuration
 
 ### Network Details
 
-| Network | Chain ID | RPC URL | Explorer |
-|---------|----------|---------|----------|
-| Mainnet | 52014 | `https://rpc.ankr.com/electroneum/${ANKR_API_KEY}` | `https://blockexplorer.electroneum.com` |
-| Testnet | 5201420 | `https://rpc.ankr.com/electroneum_testnet/${ANKR_API_KEY}` | `https://testnet-blockexplorer.electroneum.com` |
+| Property | Value |
+|----------|-------|
+| Name | Pharos Atlantic Testnet |
+| Chain ID | 688689 |
+| RPC Public Endpoint | `https://atlantic.dplabs-internal.com` |
+| WSS Public Endpoint | `wss://atlantic.dplabs-internal.com` |
+| Explorer | `https://atlantic.pharosscan.xyz/` |
+| Environment | Atlantic Testnet |
+| Ratelimit | 500 times/5m |
+| Max Pending TXs (Addr) | 64 |
 
 ### Environment Variables
 
 Create a `.env` file in your project root:
 
 ```env
-# Ankr API Key (required for RPC access)
-ANKR_API_KEY=your_ankr_api_key_here
-
 # Private key for deployment (keep secure!)
 PRIVATE_KEY=your_private_key_here
 ```
@@ -249,21 +252,15 @@ npm run build
 #### Hardhat Deployment
 
 ```bash
-# Deploy to testnet
-npx hardhat run scripts/deploy.js --network electroneum-testnet
-
-# Deploy to mainnet
-npx hardhat run scripts/deploy.js --network electroneum
+# Deploy to Pharos Atlantic Testnet
+npx hardhat run scripts/deploy.js --network pharos-testnet
 ```
 
 #### Foundry Deployment
 
 ```bash
-# Deploy to testnet
-forge script script/Counter.s.sol:CounterScript --rpc-url https://rpc.ankr.com/electroneum_testnet/${ANKR_API_KEY} --private-key ${PRIVATE_KEY} --broadcast
-
-# Deploy to mainnet
-forge script script/Counter.s.sol:CounterScript --rpc-url https://rpc.ankr.com/electroneum/${ANKR_API_KEY} --private-key ${PRIVATE_KEY} --broadcast
+# Deploy to Pharos Atlantic Testnet
+forge script script/Counter.s.sol:CounterScript --rpc-url https://atlantic.dplabs-internal.com --private-key ${PRIVATE_KEY} --broadcast
 ```
 
 ## 🔍 Troubleshooting
@@ -273,16 +270,14 @@ forge script script/Counter.s.sol:CounterScript --rpc-url https://rpc.ankr.com/e
 #### 1. Network Connection Issues
 
 ```bash
-# Check if you have the correct ANKR_API_KEY
-echo $ANKR_API_KEY
-
 # Verify network configuration in hardhat.config.ts or foundry.toml
+# Ensure RPC endpoint https://atlantic.dplabs-internal.com is accessible
 ```
 
 #### 2. Contract Deployment Fails
 
 ```bash
-# Ensure you have sufficient ETN for gas fees
+# Ensure you have sufficient PHRS for gas fees
 # Check your private key is correct
 # Verify network RPC endpoint is accessible
 ```
@@ -302,7 +297,7 @@ npx tsc --noEmit
 
 ```bash
 # Ensure MetaMask is installed and unlocked
-# Check if you're on the correct network (Electroneum)
+# Check if you're on the correct network (Pharos Atlantic Testnet)
 # Clear browser cache and try again
 ```
 
@@ -328,18 +323,18 @@ npx etn-dapp test-project
 ```
 ## 📞 Support
 
-- **Documentation**: [https://developer.electroneum.com](https://developer.electroneum.com)
+- **Documentation**: [https://developer.Pharos.com](https://developer.Pharos.com)
 - **GitHub Issues**: [Report bugs here](https://github.com/devbigeazi/gocto-forge/issues)
 
 ---
 
-**Built with ❤️ for Electroneum Developer Community**
+**Built with ❤️ for Pharos Developer Community**
 
-*gocto-forge - Empowering developers to build the future of decentralized applications on Electroneum.*
+*gocto-forge - Empowering developers to build the future of decentralized applications on Pharos.*
 
 ## 🔗 Useful Links
 
-- [Electroneum Docs](https://developer.electroneum.com/)
+- [Pharos Docs](https://developer.Pharos.com/)
 - [Viem Docs](https://viem.sh/docs/getting-started)
 - [Wagmi Docs](https://wagmi.sh/react/getting-started)
 - [Foundry Book](https://book.getfoundry.sh/)

@@ -43,7 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - React + TypeScript + Foundry
   - React + JavaScript + Foundry
 - Monorepo structure with workspaces
-- Pre-configured Electroneum network settings
+- Pre-configured Pharos network settings
 - Sample Counter smart contract
 - Complete DApp with wallet integration
 - Modern UI with Tailwind CSS and dark mode
@@ -81,14 +81,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Environment management
 
 ### Network Configuration
-- **Electroneum Mainnet**:
-  - Chain ID: 52014
-  - RPC: `https://rpc.ankr.com/electroneum/${ANKR_API_KEY}`
-  - Explorer: `https://blockexplorer.electroneum.com`
-- **Electroneum Testnet**:
-  - Chain ID: 52014
-  - RPC: `https://rpc.ankr.com/electroneum_testnet/${ANKR_API_KEY}`
-  - Explorer: `https://testnet-blockexplorer.electroneum.com`
+- **Pharos Atlantic Testnet**:
+  - Chain ID: 688689
+  - RPC: `https://atlantic.dplabs-internal.com`
+  - WSS: `wss://atlantic.dplabs-internal.com`
+  - Explorer: `https://atlantic.pharosscan.xyz/`
 
 ### Sample DApp Features
 - **Counter Contract**:
@@ -174,7 +171,7 @@ Template updates are backward compatible within the same major version. New feat
 
 ### Contributors
 - **DevBigEazi**: Project creator and maintainer
-- **Electroneum Community**: Feedback and testing
+- **Pharos Community**: Feedback and testing
 - **Open Source Contributors**: Bug reports and feature suggestions
 
 ### Dependencies

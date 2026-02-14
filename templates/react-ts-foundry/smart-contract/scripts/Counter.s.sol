@@ -10,14 +10,7 @@ contract CounterScript is Script {
     function setUp() public {}
 
     function run() public {
-        vm.createSelectFork("electroneum-testnet");
-        vm.startBroadcast();
-
-        counter = new Counter();
-
-        vm.stopBroadcast();
-
-        vm.createSelectFork("electroneum");
+        vm.createSelectFork("pharos-testnet");
         vm.startBroadcast();
 
         counter = new Counter();
