@@ -309,7 +309,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ```bash
 # Clone the repository
-git clone https://github.com/DevBigEazi/gocto-forge.git
+git clone https://github.com/hola-official/gocto-forge.git
 cd gocto-forge
 
 # Install dependencies
@@ -319,12 +319,12 @@ npm install
 npm link
 
 # Test the CLI
-npx etn-dapp test-project
+npx gocto-forge test-project
 ```
 ## 📞 Support
 
-- **Documentation**: [https://developer.Pharos.com](https://developer.Pharos.com)
-- **GitHub Issues**: [Report bugs here](https://github.com/devbigeazi/gocto-forge/issues)
+- **Documentation**: [https://docs.pharosnetwork.xyz/](https://docs.pharosnetwork.xyz/)
+- **GitHub Issues**: [Report bugs here](https://github.com/hola-official/gocto-forge/issues)
 
 ---
 
@@ -334,7 +334,7 @@ npx etn-dapp test-project
 
 ## 🔗 Useful Links
 
-- [Pharos Docs](https://developer.Pharos.com/)
+- [Pharos Docs](https://docs.pharosnetwork.xyz/)
 - [Viem Docs](https://viem.sh/docs/getting-started)
 - [Wagmi Docs](https://wagmi.sh/react/getting-started)
 - [Foundry Book](https://book.getfoundry.sh/)
